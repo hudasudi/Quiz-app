@@ -94,8 +94,42 @@ function selectAnswer(e){
 
   if(isCorrect){
     selectBtn.classList.add("correct");
+    score++;
   }else{
     selectBtn.classList.add("incorrect");
   }
+
+  Array.from(answersBtns.children).forEach(button => {
+    if(button.dataset.correct === "true"){
+      button.classList.add("correct");
+    }
+    button.disabled = true;
+  });
+  nextQbtn.style.display = "block";
 }
+
+function showScore(){
+  resetState();
+  questionElem.innerHTML = `You Scored ${score} Out Of ${questions.length} !`;
+  nextQbtn.innerHTML = "Play Again";
+  nextQbtn.style.display = "block";
+}
+
+function handleNextButton(){
+  i++;
+  if(i < questions.length){
+    showQuestion();
+  }else{
+    showScore();
+  }
+}
+
+nextQbtn.addEventListener("click", () =>{
+  if(i < questions.length){
+    handleNextButton();
+  }else{
+    startQuiz();
+  }
+});
+
 startQuiz();
