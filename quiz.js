@@ -1,7 +1,7 @@
 
 const questions = [
   {
-    question: "which one is the largset continent in the world? ",
+    question: "which one is the largest continent in the world? ",
     answers: [
       {text:"Australia" , correct: false},
       {text:"Africa", correct:false},
@@ -32,17 +32,17 @@ const questions = [
     answers: [
       {text:"Arabic" , correct:false},
       {text:"Japanese", correct:false},
-      {text:"Norwegian", correct:false},
+      {text:"Russian", correct:false},
       {text:"Mandarin Chinese", correct:true}
     ]
   },
     {
     question: "Which one is top 1 easiest language? ",
     answers: [
-      {text:"Spanish" , correct:false},
-      {text:"French", correct:true},
+      {text:"Spanish" , correct:true},
+      {text:"French", correct:false},
       {text:"Portuguese", correct:false},
-      {text:"German", correct:false}
+      {text:"Norwegian", correct:false}
     ]
   }
 ];
