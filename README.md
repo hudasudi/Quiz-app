@@ -13,6 +13,12 @@ This is a simple web-based quiz application built using **HTML**, **CSS**, and *
 
 ---
 
+## 🌟 Future Plans
+
+- Make the layout responsive for different devices
+
+---
+
 ## 🚀 How to Run
 
 1. Clone the repository:
