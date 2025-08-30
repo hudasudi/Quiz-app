@@ -13,8 +13,7 @@ This is a simple web-based quiz application built using **HTML**, **CSS**, and *
 
 ---
 
-## 🚀 How to Run
+## 🌟 Future Plans
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/hudasudi/Quiz-app.git
+- Make the layout responsive for different devices
+
