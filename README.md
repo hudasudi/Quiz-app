@@ -10,10 +10,9 @@ This is a simple web-based quiz application built using **HTML**, **CSS**, and *
 - Dynamic question rendering
 - Immediate feedback on selected answers (correct/incorrect)
 - Score tracking
+- Added responsive layouts for different devices
 
----
 
-## 🌟 Future Plans
 
-- Make the layout responsive for different devices
+
 
