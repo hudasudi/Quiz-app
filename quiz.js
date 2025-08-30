@@ -1,4 +1,4 @@
-
+//Quiz App Questions
 const questions = [
   {
     question: "which one is the largest continent in the world? ",
@@ -47,13 +47,15 @@ const questions = [
   }
 ];
 
+//DOM elements
 const questionElem = document.getElementById("question");
 const answersBtns = document.getElementById("answer-btn");
 const nextQbtn = document.getElementById("next-q");
 
 let i = 0;
-let score = 0;
+let score = 0; // tracks how many correct answers the user got
 
+//start quix from beginning 
 function startQuiz(){
   i = 0;
   score = 0;
@@ -61,13 +63,14 @@ function startQuiz(){
  showQuestion();
 }
 
+//Display the current questions and its answers
 function showQuestion(){
   resetState()
 let currentQ = questions[i];
 let questionNo = i + 1;
 questionElem.innerHTML = questionNo + ". " + currentQ.question;
 
-// answersBtns.innerHTML = "";
+//create a button for each answer
 currentQ.answers.forEach(answer => {
   const button = document.createElement("button");
   button.innerHTML = answer.text;
@@ -80,14 +83,14 @@ currentQ.answers.forEach(answer => {
   button.addEventListener("click", selectAnswer);
 });
 }
-
+//clear previous answers anf hide the next button
 function resetState(){
   nextQbtn.style.display = "none";
   while(answersBtns.firstChild){
     answersBtns.removeChild(answersBtns.firstChild);
   }
 }
-
+// handle the right and wrong answers/ user selection
 function selectAnswer(e){
   const selectBtn = e.target;
   const isCorrect = selectBtn.dataset.correct === "true";
@@ -98,7 +101,7 @@ function selectAnswer(e){
   }else{
     selectBtn.classList.add("incorrect");
   }
-
+// shows the correct answer + hides all buttons
   Array.from(answersBtns.children).forEach(button => {
     if(button.dataset.correct === "true"){
       button.classList.add("correct");
@@ -107,14 +110,14 @@ function selectAnswer(e){
   });
   nextQbtn.style.display = "block";
 }
-
+// display the final grade of Quiz app + you can play again
 function showScore(){
   resetState();
   questionElem.innerHTML = `You Scored ${score} Out Of ${questions.length} !`;
   nextQbtn.innerHTML = "Play Again";
   nextQbtn.style.display = "block";
 }
-
+// move to the next question or end quiz
 function handleNextButton(){
   i++;
   if(i < questions.length){
@@ -123,7 +126,7 @@ function handleNextButton(){
     showScore();
   }
 }
-
+// next button click handler
 nextQbtn.addEventListener("click", () =>{
   if(i < questions.length){
     handleNextButton();
